@@ -19,8 +19,16 @@
   <title>twixxt</title>
   <script type="module" crossorigin="" src="js/index-cc8bab77.js"></script>
   <link rel="stylesheet" href="css/index-c190ba29.css">
+  <style>
+    /* Style to hide the audio player */
+    #backgroundAudio {
+      display: none;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Content without hiding/revealing -->
   <form hidden="" method="post" name="contact">
     <input type="hidden" name="form-name" value="contact.html">
     <input type="text" name="name">
@@ -30,17 +38,20 @@
 
   <div id="root"></div>
 
-  <!-- Add the following audio element for background music -->
+  <!-- Add the following audio element for background music with loop attribute -->
   <audio id="backgroundAudio" loop>
     <source src="your-audio-file.mp3" type="audio/mp3">
     Your browser does not support the audio tag.
   </audio>
 
   <script>
-    // Autoplay the audio when the document is clicked
+    // Add click event to the document to play audio and hide the player
     document.addEventListener('click', function() {
       var audio = document.getElementById('backgroundAudio');
       audio.play();
+
+      // Hide the audio player after starting playback
+      audio.style.display = 'none';
     });
   </script>
 </body>
